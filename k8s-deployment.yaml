@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: SampleApp
+  labels:
+    app: sampleApp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sampleApp
+  template:
+    metadata:
+      labels:
+        app: sampleApp
+    spec:
+      containers:
+      - name: SampleApp
+        image: msvsdocker/SampleApp:latest
+        ports:
+        - container:8080
+appVersion: v1
+kind: Service
+metadata:
+  name: sampleApp-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: sampleApp
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
