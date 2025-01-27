@@ -32,3 +32,4 @@ C:\Users\skoth\source\repos\Playground\SampleApp\obj\Debug\net9.0\SampleApp.pdb
 C:\Users\skoth\source\repos\Playground\SampleApp\obj\Debug\net9.0\SampleApp.genruntimeconfig.cache
 C:\Users\skoth\source\repos\Playground\SampleApp\obj\Debug\net9.0\ref\SampleApp.dll
 C:\Users\skoth\source\repos\Playground\SampleApp\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\skoth\source\repos\Playground\SampleApp\obj\Debug\net9.0\SampleApp.sourcelink.json
