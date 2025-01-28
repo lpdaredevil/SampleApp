@@ -17,8 +17,7 @@ jobs:
          # List the directory contents to debug the path issue
         - name: List directory contents
           run: |
-            ls -alh
-            ls -alh SampleApp  
+            ls -alh 
 
         - name: Set up Docker Buildx
           uses: docker/setup-buildx-action@v2
@@ -31,7 +30,7 @@ jobs:
         
         - name: Build and push docker image
           run: |
-            docker buildx build -t ${{ secrets.DOCKER_USERNAME }}/my-sample-app:${{ github.sha }} -f SampleApp/Dockerfile . --push
+            docker buildx build -t ${{ secrets.DOCKER_USERNAME }}/my-sample-app:${{ github.sha }} -f Dockerfile . --push
 
 
     deploy:
