@@ -58,10 +58,12 @@ jobs:
         - name: Create kubernetes Secret for Docker Hub
           run: |
             kubectl create secret docker-registry dockerhub-secret \
-              --docker-username="${{ secrets.DOCKER_USERNAME}}" \
+              --docker-server=https://index.docker.io/v1/ \
               --docker-password ="${{ secrets.DOCKER_PAT}}" \
               --docker-email ="${{ secrets.DOCKER_EMAIL}}"\
               --dry-run=client -o yaml | kubectl apply -f -
+
+              
 
         #Step4: Deploy to Kubernets
         - name: Deploy to EKS
