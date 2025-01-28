@@ -18,7 +18,7 @@ spec:
       - name: SampleApp
         image: msvsdocker/sample-app:latest
         ports:
-        - containerPort:8080
-        - containerPort:8081
+        - containerPort: 8080
+        - containerPort: 8081
       imagePullSecrets:
       - name: dockerhub-secret
