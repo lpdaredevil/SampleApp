@@ -8,13 +8,14 @@ EXPOSE 8080
 EXPOSE 8081
 
 # This stage is used to build the service project
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["SampleApp/SampleApp.csproj", "SampleApp/"]
-RUN dotnet restore "./SampleApp/SampleApp.csproj"
+#COPY ["SampleApp/SampleApp.csproj", "SampleApp/"]
+COPY ["SampleApp.csproj", "./"]
+RUN dotnet restore "./SampleApp.csproj"
 COPY . .
-WORKDIR "/src/SampleApp"
+WORKDIR "/src/"
 RUN dotnet build "./SampleApp.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
