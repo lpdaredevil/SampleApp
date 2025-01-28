@@ -15,7 +15,7 @@ spec:
         app: sampleApp
     spec:
       containers:
-      - name: SampleApp
+      - name: my-sample-app
         image: msvsdocker/my-sample-app:latest
         ports:
         - containerPort: 8080
