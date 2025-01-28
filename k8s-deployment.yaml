@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: my-sample-app
-        image: msvsdocker/my-sample-app:${{ github.sha }}
+        image: msvsdocker/my-sample-app:f69c01f8d402f4772b0091cc88dec51962223858
         ports:
         - containerPort: 8080
         - containerPort: 8081
