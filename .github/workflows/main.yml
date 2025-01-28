@@ -61,7 +61,7 @@ jobs:
               --docker-username="${{ secrets.DOCKER_USERNAME}}" \
               --docker-password ="${{ secrets.DOCKER_PAT}}" \
               --docker-email ="${{ secrets.DOCKER_EMAIL}}"\
-              -dry-run=client -o yaml | kubectl apply -f -
+              --dry-run=client -o yaml | kubectl apply -f -
 
         #Step4: Deploy to Kubernets
         - name: Deploy to EKS
